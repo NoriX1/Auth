@@ -11,6 +11,7 @@ import Welcome from './components/Welcome';
 import Signup from './components/auth/Signup';
 import Feature from './components/Feature';
 import Signout from './components/auth/Signout';
+import Signin from './components/auth/Signin';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducers, {
@@ -22,6 +23,7 @@ ReactDOM.render(
         <BrowserRouter>
             <App>
                 <Route exact path="/" component={Welcome} />
+                <Route path="/signin" component={Signin} />
                 <Route path="/signup" component={Signup} />
                 <Route path="/signout" component={Signout} />
                 <Route path="/feature" component={Feature} />
