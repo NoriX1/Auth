@@ -9,8 +9,9 @@ import reducers from './reducers';
 import App from './components/App';
 import Welcome from './components/Welcome';
 import Signup from './components/auth/Signup';
+import Feature from './components/Feature';
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducers, {}, composeEnhancers(applyMiddleware(thunk)));
 
 ReactDOM.render(
@@ -18,7 +19,8 @@ ReactDOM.render(
         <BrowserRouter>
             <App>
                 <Route exact path="/" component={Welcome} />
-                <Route exact path="/signup" component={Signup} />
+                <Route path="/signup" component={Signup} />
+                <Route path="/feature" component={Feature} />
             </App>
         </BrowserRouter>
     </Provider>,
